@@ -20,6 +20,11 @@
         }
         &-name {
             font-weight: bold;
+            max-height: 44px;
+        }
+        &-author, &-name {
+            max-width: 270px;
+            overflow: hidden;
         }
     }
     .actions {

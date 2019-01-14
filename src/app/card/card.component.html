@@ -2,7 +2,7 @@
   <div class="card-info">
     <img class="image" [src]="book.image ? book.image : 'assets/no_image_available.png'" [alt]="book.name">
     <p class="card-info-name">{{ book.name }}</p>
-    <p>{{ book.author }}</p>
+    <p class="card-info-author">{{ book.author }}</p>
   </div>
   <div class="actions">
       <button class="btn-edit" (click)="openModal('edit-modal'); selectBook();">Редактировать</button>
