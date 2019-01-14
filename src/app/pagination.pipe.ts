@@ -39,9 +39,9 @@ export class PaginationPipe implements PipeTransform {
 
     return {
         id: config.id,
-        elementsPerPage: +config.elementsPerPage || 0,
-        currentPage: +config.currentPage || 1,
-        totalElements: +config.totalElements || collection.length
+        elementsPerPage: config.elementsPerPage,
+        currentPage: config.currentPage,
+        totalElements: collection.length
     };
   }
 

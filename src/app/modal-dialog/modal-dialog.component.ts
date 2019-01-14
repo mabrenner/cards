@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ElementRef, OnDestroy } from '@angular/core';
-import { ModalService } from '../modal.service';
+import { ModalDialogService } from '../modal-dialog.service';
 
 @Component({
   selector: 'app-modal-dialog',
@@ -12,14 +12,13 @@ export class ModalDialogComponent implements OnInit, OnDestroy {
 
   private element: any;
 
-  constructor(private modalService: ModalService, private el: ElementRef) {
+  constructor(private modalDialogService: ModalDialogService, private el: ElementRef) {
       this.element = el.nativeElement;
   }
 
   ngOnInit(): void {
       let modal = this;
 
-      // переместить элемент в конец страницы (непосредственно перед </ body>), чтобы он мог отображаться над всем остальным
       document.body.appendChild(this.element);
 
       this.element.addEventListener('click', function (e: any) {
@@ -28,13 +27,11 @@ export class ModalDialogComponent implements OnInit, OnDestroy {
           }
       });
 
-      // добавить этот модальный экземпляр к модальному сервису, чтобы он был доступен из контроллеров
-      this.modalService.add(this);
+      this.modalDialogService.add(this);
   }
 
-  // удалить этот модальный экземпляр из модального сервиса, когда директива уничтожена
   ngOnDestroy(): void {
-      this.modalService.remove(this.id);
+      this.modalDialogService.remove(this.id);
       this.element.remove();
   }
 

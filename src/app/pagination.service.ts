@@ -1,7 +1,7 @@
 import { EventEmitter } from '@angular/core';
 
 export interface PaginationInstance {
-  id?: string;
+  id: string;
   elementsPerPage: number;
   currentPage: number;
   totalElements?: number;
@@ -50,9 +50,6 @@ export class PaginationService {
     return {} as PaginationInstance;
   }
 
-/**
- * Выполните неглубокое клонирование объекта.
- */
 private clone(obj: any): any {
     var target = {};
     for (var i in obj) {

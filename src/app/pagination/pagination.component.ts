@@ -51,16 +51,16 @@ export class PaginationComponent implements OnInit {
   }
 
   private updatePageLinks() {
-    let inst = this.paginationService.getInstance(this.id);
-    const correctedCurrentPage = this.outOfBoundCorrection(inst);
+    let instance = this.paginationService.getInstance(this.id);
+    const correctedCurrentPage = this.outOfBoundCorrection(instance);
 
-    if (correctedCurrentPage !== inst.currentPage) {
+    if (correctedCurrentPage !== instance.currentPage) {
         setTimeout(() => {
             this.setCurrentPage(correctedCurrentPage);
-            this.pages = this.createPageArray(inst.currentPage, inst.elementsPerPage, inst.totalElements, this.maxSize);
+            this.pages = this.createPageArray(instance.currentPage, instance.elementsPerPage, instance.totalElements, this.maxSize);
         });
     } else {
-        this.pages = this.createPageArray(inst.currentPage, inst.elementsPerPage, inst.totalElements, this.maxSize);
+        this.pages = this.createPageArray(instance.currentPage, instance.elementsPerPage, instance.totalElements, this.maxSize);
     }
   }
 

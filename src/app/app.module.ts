@@ -13,7 +13,7 @@ import { PaginationPipe } from './pagination.pipe';
 
 import { FormsModule } from '@angular/forms';
 import { ModalDialogComponent } from './modal-dialog/modal-dialog.component';
-import { ModalService } from './modal.service';
+import { ModalDialogService } from './modal-dialog.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { ModalService } from './modal.service';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [ConfigService, PaginationService, ModalService],
+  providers: [ConfigService, PaginationService, ModalDialogService],
   bootstrap: [AppComponent],
   exports: [PaginationPipe, PaginationComponent]
 })

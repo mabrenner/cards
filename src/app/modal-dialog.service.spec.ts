@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ModalService } from './modal.service';
+import { ModalDialogService } from './modal-dialog.service';
 
-describe('ModalService', () => {
+describe('ModalDialogService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ModalService = TestBed.get(ModalService);
+    const service: ModalDialogService = TestBed.get(ModalDialogService);
     expect(service).toBeTruthy();
   });
 });

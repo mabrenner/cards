@@ -1,8 +1,7 @@
-import { ModalService } from './modal.service';
+import { ModalDialogService } from './modal-dialog.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { ConfigService } from './config.service';
 import { PaginationInstance } from './pagination.service';
-import { InternalFormsSharedModule } from '@angular/forms/src/directives';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +12,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private configService: ConfigService,
-    private modalService: ModalService
+    private modalDialogService: ModalDialogService
     ) { }
 
   public books;
@@ -58,6 +57,6 @@ export class AppComponent implements OnInit {
   }
 
   closeModal(id: string) {
-    this.modalService.close(id);
+    this.modalDialogService.close(id);
   }
 }
