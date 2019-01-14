@@ -1,0 +1,18 @@
+.pagination {
+    display: inline-block;
+    text-align: center;
+    padding-left: 0;
+    li {
+        display: inline;
+        button {
+            padding: 10px 15px;
+            border: none;
+            font-size: 16px;
+        }
+    }
+    .current button {
+        background: #6aa7b9;
+        color: #fefefe;
+        cursor: default; 
+    }
+}

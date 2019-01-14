@@ -1,21 +1,54 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<h1 class="header">библиотека</h1>
 
-<router-outlet></router-outlet>
+<app-elements-per-page name="fieldName" ngDefaultControl [(ngModel)]="config.elementsPerPage" [elementsPerPage]="config.elementsPerPage"></app-elements-per-page>
+
+<div class="add-element">
+  <button (click)="addBook(bookName, bookAuthor, bookYear, bookImageLink)" class="btn-add">+ Добавить</button>
+  <label>
+    &nbsp;Название книги&nbsp;
+    <input type="text" #bookName>
+  </label>
+  <label>
+    &nbsp;Автор&nbsp;
+    <input type="text" #bookAuthor>
+  </label>
+  <label>
+    &nbsp;Год издания&nbsp;
+    <input type="number" #bookYear>
+  </label>
+  <label>
+    &nbsp;Ссылка на изображение&nbsp;
+    <div class="tooltip">
+      <input type="text" #bookImageLink>
+      <span class="tooltiptext"> Например, https://ozon-st.cdn.ngenix.net/multimedia/1013243806.jpg</span>
+    </div>
+  </label>
+</div>
+
+<div class="cards">
+  <div *ngFor="let book of books | pagination: config">
+    <app-card [book]="book" (bookSelected)="selectedBook = book"></app-card>
+  </div>
+</div>
+
+<app-pagination *ngIf="config.elementsPerPage > 0" [id]="config.id" [maxSize]="maxSize" (pageChange)="onPageChange($event)"></app-pagination>
+
+<app-modal-dialog id="edit-modal" style="display: none" class="modal">
+  <h3 class="title">Редактировать карточку</h3>
+  <div class="modal-info">
+    <p>Название книги: </p><input type="text" [ngModel]="selectedBook?.name" (ngModelChange)="selectedBook.name=$event"/>
+    <p>Автор: </p><input type="text" [ngModel]="selectedBook?.author" (ngModelChange)="selectedBook.author=$event"/>
+    <p>Год издания: </p><input type="text" [ngModel]="selectedBook?.year" (ngModelChange)="selectedBook.year=$event"/>
+    <p>Ссылка на изображение: </p><input type="text" [ngModel]="selectedBook?.image" (ngModelChange)="selectedBook.image=$event"/>
+  </div>
+  <div class="modal-actions">
+    <button class="btn btn-edit" (click)="closeModal('edit-modal');">Закрыть</button>
+  </div>
+</app-modal-dialog>
+<app-modal-dialog id="delete-modal" style="display: none" class="modal">
+  <p class="title">Удалить карточку <b>{{ selectedBook?.name }}?</b></p>
+  <div class="modal-actions">
+    <button class="btn btn-cancel" (click)="closeModal('delete-modal')">Отмена</button>
+    <button class="btn btn-delete" (click)="closeModal('delete-modal'); removeBook(selectedBook.name);">ОК</button>
+  </div>
+</app-modal-dialog>

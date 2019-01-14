@@ -1,0 +1,39 @@
+.card-inner {
+    flex: 0 0 200px;
+    margin: 15px;
+    width: 300px;
+    height: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+    transition: 0.3s;
+    border-radius: 2px;
+    background: white;
+    position: relative;
+    &:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+    }
+    .card-info {
+        text-align: center;
+        padding: 15px;
+        .image {
+            max-height: 300px;
+            max-width: 200px;
+        }
+        &-name {
+            font-weight: bold;
+        }
+    }
+    .actions {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        button {
+            margin-left: 10px;
+            margin-right: 10px;
+            padding: 10px 15px;
+            border: none;
+            font-size: 16px;
+        }
+    }
+}

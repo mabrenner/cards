@@ -1,0 +1,70 @@
+.header {
+    text-align: center;
+    background: #f58637;
+    margin: 0;
+    padding: 20px;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    font-size: 16px;
+}
+
+.add-element {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    label {
+        flex: 0 0 200px;
+        margin: 5px;
+        input {
+            width: 200px;
+        }
+        
+    }
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+app-pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    .title {
+        text-align: center;
+    }
+    .modal-info {
+        p {
+            font-size: 16px;
+            margin: 5px;
+        }
+        input {
+            width: 98%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            height: 30px;
+            padding: 5px;
+        }
+    }
+    .modal-actions {
+        text-align: center;
+        .btn {
+            margin: 20px 15px 10px 0;
+        }
+    }
+}
