@@ -23,12 +23,10 @@ export class ModalDialogComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     let modal = this;
 
-    //   document.body.appendChild(this.element);
-
     this.renderer.appendChild(document.body, this.element);
 
-    this.element.addEventListener('click', function (e: any) {
-      if (e.target.className === 'modal') {
+    this.renderer.listen(this.element, 'click', (event: any) => {
+      if (event.target.className === 'modal') {
         modal.close();
       }
     });
@@ -42,14 +40,12 @@ export class ModalDialogComponent implements OnInit, OnDestroy {
   }
 
   open(): void {
-    this.element.style.display = 'block';
-    //   document.body.classList.add('modal-open');
+    this.renderer.setStyle(this.element, 'display', 'block');
     this.renderer.addClass(document.body, 'modal-open');
   }
 
   close(): void {
-    this.element.style.display = 'none';
-    // document.body.classList.remove('modal-open');
+    this.renderer.setStyle(this.element, 'display', 'none');
     this.renderer.removeClass(document.body, 'modal-open');
   }
 }

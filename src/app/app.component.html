@@ -25,7 +25,7 @@
     &nbsp;Ссылка на изображение&nbsp;
     <div class="tooltip">
       <input type="text" #bookImageLink>
-      <span class="tooltiptext"> Например, https://ozon-st.cdn.ngenix.net/multimedia/1013243806.jpg</span>
+      <span class="tooltip-text"> Например, https://ozon-st.cdn.ngenix.net/multimedia/1013243806.jpg</span>
     </div>
   </label>
 </div>
@@ -43,7 +43,7 @@
   <div class="modal-info">
     <p>Название книги: </p><input type="text" [ngModel]="selectedBook?.name" (ngModelChange)="selectedBook.name=$event"/>
     <p>Автор: </p><input type="text" [ngModel]="selectedBook?.author" (ngModelChange)="selectedBook.author=$event"/>
-    <p>Год издания: </p><input type="text" [ngModel]="selectedBook?.year" (ngModelChange)="selectedBook.year=$event"/>
+    <p>Год издания: </p><input type="number" [ngModel]="selectedBook?.year" (ngModelChange)="selectedBook.year=$event"/>
     <p>Ссылка на изображение: </p><input type="text" [ngModel]="selectedBook?.image" (ngModelChange)="selectedBook.image=$event"/>
   </div>
   <div class="modal-actions">

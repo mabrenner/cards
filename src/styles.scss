@@ -14,7 +14,7 @@ input {
 .tooltip {
     position: relative;
     display: inline-block;
-    .tooltiptext {
+    .tooltip-text {
         visibility: hidden;
         max-width: 350px;
         background-color: #555;
@@ -40,7 +40,7 @@ input {
             border-color: #555 transparent transparent transparent;
         }
     }
-    &:hover .tooltiptext {
+    &:hover .tooltip-text {
         visibility: visible;
         opacity: 0.7;
     }

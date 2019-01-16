@@ -7,11 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { PaginationComponent } from './pagination/pagination.component';
-import { ConfigService } from './shared/services/config.service';
-import { PaginationService } from './shared/services/pagination.service';
-import { PaginationPipe } from './shared/pagination.pipe';
 import { ModalDialogComponent } from './modal-dialog/modal-dialog.component';
+import { PaginationPipe } from './shared/pagination.pipe';
+import { ConfigService } from './shared/services/config.service';
 import { ModalDialogService } from './shared/services/modal-dialog.service';
+import { PaginationService } from './shared/services/pagination.service';
 
 @NgModule({
   declarations: [
