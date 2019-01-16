@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { PaginationService, PaginationInstance } from './pagination.service';
+import { PaginationService, PaginationInstance } from './services/pagination.service';
 
 const LARGE_NUMBER = Number.MAX_SAFE_INTEGER;
 
@@ -13,7 +13,6 @@ export class PaginationPipe implements PipeTransform {
   }
 
   transform(collection: any[], args: any): any {
-
     let instance = this.createInstance(collection, args);
     let id = instance.id;
     let start, end;

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { ModalDialogService } from '../modal-dialog.service';
+
+import { ModalDialogService } from '../shared/services/modal-dialog.service';
 
 @Component({
   selector: 'app-card',
@@ -8,7 +9,7 @@ import { ModalDialogService } from '../modal-dialog.service';
 })
 export class CardComponent {
 
-  @Input() book;
+  @Input() book: any;
   @Output() bookSelected: EventEmitter<any> = new EventEmitter();
 
   constructor(

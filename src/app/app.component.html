@@ -1,6 +1,11 @@
-<h1 class="header">библиотека</h1>
+<h1 class="header">Библиотека</h1>
 
-<app-elements-per-page name="fieldName" ngDefaultControl [(ngModel)]="config.elementsPerPage" [elementsPerPage]="config.elementsPerPage"></app-elements-per-page>
+<div class="el-per-page">
+  <label>
+    Количество записей на страницу:&nbsp;
+    <input type="number" min="0" [(ngModel)]="config.elementsPerPage">
+  </label>
+</div>
 
 <div class="add-element">
   <button (click)="addBook(bookName, bookAuthor, bookYear, bookImageLink)" class="btn-add">+ Добавить</button>

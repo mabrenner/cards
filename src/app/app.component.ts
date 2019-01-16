@@ -1,7 +1,8 @@
-import { ModalDialogService } from './modal-dialog.service';
-import { Component, OnInit, Input } from '@angular/core';
-import { ConfigService } from './config.service';
-import { PaginationInstance } from './pagination.service';
+import { Component, OnInit } from '@angular/core';
+
+import { ModalDialogService } from './shared/services/modal-dialog.service';
+import { ConfigService } from './shared/services/config.service';
+import { PaginationInstance } from './shared/services/pagination.service';
 
 @Component({
   selector: 'app-root',
@@ -10,28 +11,27 @@ import { PaginationInstance } from './pagination.service';
 })
 export class AppComponent implements OnInit {
 
-  constructor(
-    private configService: ConfigService,
-    private modalDialogService: ModalDialogService
-    ) { }
-
-  public books;
-  public selectedBook;
+  public books: any;
+  public selectedBook: any;
 
   public maxSize = 7;
   public config: PaginationInstance = {
     id: 'books',
     elementsPerPage: 10,
     currentPage: 1
-};
+  };
+
+  constructor(
+    private configService: ConfigService,
+    private modalDialogService: ModalDialogService
+    ) { }
 
   ngOnInit() {
     // this.configService.getAll().subscribe(data => this.books = data);
     this.books = this.configService.getAll();
   }
 
-  public addBook(name, author, year, link) {
-
+  public addBook(name: any, author: any, year: any, link: any) {
     let arr = {
       name: name.value,
       author: author.value,

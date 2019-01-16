@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BOOKS } from './mock-books';
+
+import { BOOKS } from '../mock-books';
 
 @Injectable({
   providedIn: 'root'
