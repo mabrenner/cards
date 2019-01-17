@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { ModalDialogService } from '../shared/services/modal-dialog.service';
 
@@ -16,11 +16,11 @@ export class CardComponent {
     private modalDialogService: ModalDialogService
     ) { }
 
-  openModal(id: string) {
+  openModal(id: string): void {
       this.modalDialogService.open(id);
   }
 
-  selectBook() {
+  selectBook(): void {
     this.bookSelected.emit();
   }
 }

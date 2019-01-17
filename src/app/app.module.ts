@@ -12,6 +12,7 @@ import { PaginationPipe } from './shared/pagination.pipe';
 import { ConfigService } from './shared/services/config.service';
 import { ModalDialogService } from './shared/services/modal-dialog.service';
 import { PaginationService } from './shared/services/pagination.service';
+import { CardDialogComponent } from './card-dialog/card-dialog.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PaginationService } from './shared/services/pagination.service';
     CardComponent,
     PaginationComponent,
     PaginationPipe,
-    ModalDialogComponent
+    ModalDialogComponent,
+    CardDialogComponent
   ],
   imports: [
     BrowserModule,

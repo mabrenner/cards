@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ModalDialogService } from './shared/services/modal-dialog.service';
 import { ConfigService } from './shared/services/config.service';
 import { PaginationInstance } from './shared/services/pagination.service';
 
@@ -23,7 +22,6 @@ export class AppComponent implements OnInit {
 
   constructor(
     private configService: ConfigService,
-    private modalDialogService: ModalDialogService
     ) { }
 
   ngOnInit() {
@@ -31,7 +29,7 @@ export class AppComponent implements OnInit {
     this.books = this.configService.getAll();
   }
 
-  public addBook(name: any, author: any, year: any, link: any) {
+  public addBook(name: any, author: any, year: any, link: any): void {
     let arr = {
       name: name.value,
       author: author.value,
@@ -47,16 +45,13 @@ export class AppComponent implements OnInit {
     link.value = '';
   }
 
-  removeBook(name: string) {
+  removeBook(name: string): void {
     this.configService.remove(name);
     this.books = this.configService.getAll();
   }
 
-  onPageChange(number: number) {
+  onPageChange(number: number): void {
     this.config.currentPage = number;
   }
 
-  closeModal(id: string) {
-    this.modalDialogService.close(id);
-  }
 }

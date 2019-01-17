@@ -1,0 +1,19 @@
+<app-modal-dialog id="edit-modal" style="display: none" class="modal">
+  <h3 class="title">Редактировать карточку</h3>
+  <div class="modal-info">
+    <p>Название книги: </p><input type="text" [ngModel]="book?.name" (ngModelChange)="book.name=$event"/>
+    <p>Автор: </p><input type="text" [ngModel]="book?.author" (ngModelChange)="book.author=$event"/>
+    <p>Год издания: </p><input type="number" [ngModel]="book?.year" (ngModelChange)="book.year=$event"/>
+    <p>Ссылка на изображение: </p><input type="text" [ngModel]="book?.image" (ngModelChange)="book.image=$event"/>
+  </div>
+  <div class="modal-actions">
+    <button class="btn btn-edit" (click)="closeModal('edit-modal');">Закрыть</button>
+  </div>
+</app-modal-dialog>
+<app-modal-dialog id="delete-modal" style="display: none" class="modal">
+  <p class="title">Удалить карточку <b>{{ book?.name }}?</b></p>
+  <div class="modal-actions">
+    <button class="btn btn-cancel" (click)="closeModal('delete-modal')">Отмена</button>
+    <button class="btn btn-delete" (click)="closeModal('delete-modal'); deleteBook();">ОК</button>
+  </div>
+</app-modal-dialog>

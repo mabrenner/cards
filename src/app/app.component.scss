@@ -20,12 +20,6 @@
     }
 }
 
-button {
-    padding: 10px 15px;
-    border: none;
-    font-size: 16px;
-}
-
 .add-element {
     display: flex;
     flex-wrap: wrap;
@@ -50,32 +44,4 @@ button {
 app-pagination {
     display: flex;
     justify-content: center;
-}
-
-.modal {
-    display: flex;
-    flex-direction: column;
-    .title {
-        text-align: center;
-    }
-    .modal-info {
-        p {
-            font-size: 16px;
-            margin: 5px;
-        }
-        input {
-            width: 98%;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            height: 30px;
-            padding: 5px;
-        }
-    }
-    .modal-actions {
-        text-align: center;
-        .btn {
-            margin: 20px 15px 10px 0;
-        }
-    }
 }
