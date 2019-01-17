@@ -9,7 +9,7 @@ import { BOOKS } from '../mock-books';
 })
 export class ConfigService {
 
-  private books = BOOKS;
+  private books: Book[] = BOOKS;
 
   constructor(private http: HttpClient) { }
 

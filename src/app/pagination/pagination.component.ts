@@ -107,7 +107,7 @@ export class PaginationComponent implements OnInit {
     return pages;
   }
 
-  private calculatePageNumber(i: number, currentPage: number, paginationRange: number, totalPages: number) {
+  private calculatePageNumber(i: number, currentPage: number, paginationRange: number, totalPages: number): number {
     let halfWay = Math.ceil(paginationRange / 2);
     if (i === paginationRange) {
         return totalPages;
