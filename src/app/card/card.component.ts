@@ -16,11 +16,11 @@ export class CardComponent {
     private modalDialogService: ModalDialogService
     ) { }
 
-  openModal(id: string): void {
+  openModal(id: string) {
       this.modalDialogService.open(id);
   }
 
-  selectBook(): void {
+  selectBook() {
     this.bookSelected.emit();
   }
 }

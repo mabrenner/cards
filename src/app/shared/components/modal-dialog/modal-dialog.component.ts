@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ElementRef, OnDestroy, Renderer2 } from '@angular/core';
 
-import { ModalDialogService } from '../shared/services/modal-dialog.service';
+import { ModalDialogService } from '../../services/modal-dialog.service';
 
 @Component({
   selector: 'app-modal-dialog',
@@ -20,7 +20,7 @@ export class ModalDialogComponent implements OnInit, OnDestroy {
     this.element = el.nativeElement;
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     let modal = this;
 
     this.renderer.appendChild(document.body, this.element);
@@ -34,17 +34,17 @@ export class ModalDialogComponent implements OnInit, OnDestroy {
     this.modalDialogService.add(this);
   }
 
-  ngOnDestroy(): void {
+  ngOnDestroy() {
     this.modalDialogService.remove(this.id);
     this.element.remove();
   }
 
-  open(): void {
+  open() {
     this.renderer.setStyle(this.element, 'display', 'block');
     this.renderer.addClass(document.body, 'modal-open');
   }
 
-  close(): void {
+  close() {
     this.renderer.setStyle(this.element, 'display', 'none');
     this.renderer.removeClass(document.body, 'modal-open');
   }

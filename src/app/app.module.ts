@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { PaginationComponent } from './pagination/pagination.component';
-import { ModalDialogComponent } from './modal-dialog/modal-dialog.component';
+import { ModalDialogComponent } from './shared/components/modal-dialog/modal-dialog.component';
 import { PaginationPipe } from './shared/pagination.pipe';
 import { ConfigService } from './shared/services/config.service';
 import { ModalDialogService } from './shared/services/modal-dialog.service';

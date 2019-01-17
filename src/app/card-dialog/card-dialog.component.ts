@@ -19,11 +19,11 @@ export class CardDialogComponent implements OnInit {
   ngOnInit() {
   }
 
-  closeModal(id: string): void {
+  closeModal(id: string) {
     this.modalDialogService.close(id);
   }
 
-  deleteBook(): void {
+  deleteBook() {
     this.bookDeleted.emit();
   }
 

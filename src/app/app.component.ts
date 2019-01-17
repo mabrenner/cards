@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
     this.books = this.configService.getAll();
   }
 
-  public addBook(name: any, author: any, year: any, link: any): void {
+  public addBook(name: any, author: any, year: any, link: any) {
     let arr = {
       name: name.value,
       author: author.value,
@@ -45,12 +45,12 @@ export class AppComponent implements OnInit {
     link.value = '';
   }
 
-  removeBook(name: string): void {
+  removeBook(name: string) {
     this.configService.remove(name);
     this.books = this.configService.getAll();
   }
 
-  onPageChange(number: number): void {
+  onPageChange(number: number) {
     this.config.currentPage = number;
   }
 
