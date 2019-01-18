@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ConfigService } from './shared/services/config.service';
-import { PaginationInstance } from './shared/services/pagination.service';
+import { PaginationInstance } from './shared/components/pagination/pagination.service';
 
 @Component({
   selector: 'app-root',
