@@ -51,8 +51,8 @@ export class PaginationService {
   }
 
 private clone(obj: any): any {
-    var target = {};
-    for (var i in obj) {
+    let target = {};
+    for (let i in obj) {
         if (obj.hasOwnProperty(i)) {
             target[i] = obj[i];
         }
