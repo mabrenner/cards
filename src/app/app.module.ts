@@ -4,33 +4,37 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from './shared/shared.module';
+
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
-import { PaginationComponent } from './pagination/pagination.component';
-import { ModalDialogComponent } from './shared/components/modal-dialog/modal-dialog.component';
-import { PaginationPipe } from './shared/pagination.pipe';
-import { ConfigService } from './shared/services/config.service';
-import { ModalDialogService } from './shared/services/modal-dialog.service';
-import { PaginationService } from './shared/services/pagination.service';
 import { CardDialogComponent } from './card-dialog/card-dialog.component';
+import { PaginationComponent } from './pagination/pagination.component';
+// import { PaginationPipe } from './shared/pagination.pipe';
+import { PaginationService } from './shared/services/pagination.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
     PaginationComponent,
-    PaginationPipe,
-    ModalDialogComponent,
+    // PaginationPipe,
     CardDialogComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    SharedModule.forRoot()
   ],
-  providers: [ConfigService, PaginationService, ModalDialogService],
+  providers: [
+    PaginationService
+  ],
   bootstrap: [AppComponent],
-  exports: [PaginationPipe, PaginationComponent]
+  exports: [
+    // PaginationPipe,
+    PaginationComponent
+  ]
 })
 export class AppModule { }
