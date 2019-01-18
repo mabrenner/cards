@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ElementRef, OnDestroy, Renderer2 } from '@angular/core';
 
-import { ModalDialogService } from '../../services/modal-dialog.service';
+import { ModalDialogService } from './modal-dialog.service';
 
 @Component({
   selector: 'app-modal-dialog',

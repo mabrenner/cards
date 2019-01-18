@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, Input, ChangeDetectorRef } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { PaginationService, PaginationInstance } from '../shared/services/pagination.service';
+import { PaginationService, PaginationInstance } from './pagination.service';
 
 export interface Page {
   label: string;
