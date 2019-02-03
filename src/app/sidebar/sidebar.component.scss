@@ -1,0 +1,17 @@
+.sidebar {
+    top: 83px;
+    left: 0;
+    background-color: #838b8b;
+    position: fixed;
+    display: flex;
+    width: 250px;
+    height: 100%;    
+    &-content {
+        a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+        }
+    }
+}

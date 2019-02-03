@@ -1,0 +1,30 @@
+.bookshelf {
+    margin-left: 250px;
+    padding-top: 90px;
+    .add-element {
+        margin: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        label {
+            flex: 0 0 200px;
+            margin: 5px;
+            input {
+                width: 200px;
+            }
+            
+        }
+    }
+    
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    
+    app-pagination {
+        display: flex;
+        justify-content: center;
+    }
+}

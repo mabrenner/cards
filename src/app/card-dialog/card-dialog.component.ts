@@ -7,7 +7,7 @@ import { ModalDialogService } from '../shared/components/modal-dialog/modal-dial
   templateUrl: './card-dialog.component.html',
   styleUrls: ['./card-dialog.component.scss']
 })
-export class CardDialogComponent implements OnInit {
+export class CardDialogComponent {
 
   @Input() book: any;
   @Output() bookDeleted: EventEmitter<any> = new EventEmitter;
@@ -15,9 +15,6 @@ export class CardDialogComponent implements OnInit {
   constructor(
     private modalDialogService: ModalDialogService
   ) { }
-
-  ngOnInit() {
-  }
 
   closeModal(id: string) {
     this.modalDialogService.close(id);

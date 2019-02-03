@@ -7,6 +7,12 @@
     text-transform: uppercase;
     font-family: 'Roboto Slab', serif;
     font-weight: 400;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    left: 0;
 }
 
 .el-per-page {
@@ -20,28 +26,28 @@
     }
 }
 
-.add-element {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    label {
-        flex: 0 0 200px;
-        margin: 5px;
-        input {
-            width: 200px;
-        }
+// .add-element {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//     align-items: center;
+//     label {
+//         flex: 0 0 200px;
+//         margin: 5px;
+//         input {
+//             width: 200px;
+//         }
         
-    }
-}
+//     }
+// }
 
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
+// .cards {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: space-around;
+// }
 
-app-pagination {
-    display: flex;
-    justify-content: center;
-}
+// app-pagination {
+//     display: flex;
+//     justify-content: center;
+// }

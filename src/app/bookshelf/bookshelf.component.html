@@ -1,0 +1,35 @@
+
+<div class="bookshelf">
+  <div class="add-element">
+    <button (click)="addBook(bookName, bookAuthor, bookYear, bookImageLink)" class="btn-add">+ Добавить</button>
+    <label>
+      &nbsp;Название книги&nbsp;
+      <input type="text" #bookName>
+    </label>
+    <label>
+      &nbsp;Автор&nbsp;
+      <input type="text" #bookAuthor>
+    </label>
+    <label>
+      &nbsp;Год издания&nbsp;
+      <input type="number" #bookYear>
+    </label>
+    <label>
+      &nbsp;Ссылка на изображение&nbsp;
+      <div class="tooltip">
+        <input type="text" #bookImageLink>
+        <span class="tooltip-text"> Например, https://ozon-st.cdn.ngenix.net/multimedia/1013243806.jpg</span>
+      </div>
+    </label>
+  </div>
+
+  <div class="cards">
+    <div *ngFor="let book of books | pagination: config">
+      <app-card [book]="book" (bookSelected)="selectedBook = book"></app-card>
+    </div>
+  </div>
+
+  <app-pagination *ngIf="config.elementsPerPage > 0" [id]="config.id" [maxSize]="maxSize" (pageChange)="onPageChange($event)"></app-pagination>
+</div>
+
+<app-card-dialog [book]="selectedBook" (bookDeleted)="removeBook(selectedBook.name)"></app-card-dialog>
