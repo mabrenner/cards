@@ -4,32 +4,27 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
-import { SharedModule } from './shared/shared.module';
+import { BookshelfModule } from './modules/bookshelf/bookshelf.module';
+import { RecommendationModule } from './modules/recommendation/recommendation.module';
 
 import { AppComponent } from './app.component';
-import { CardComponent } from './card/card.component';
-import { CardDialogComponent } from './card-dialog/card-dialog.component';
-import { BookshelfComponent } from './bookshelf/bookshelf.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { RecommendationComponent } from './recommendation/recommendation.component';
+import { AuthGuard } from './modules/auth/auth-guard.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CardComponent,
-    CardDialogComponent,
-    BookshelfComponent,
-    SidebarComponent,
-    RecommendationComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    SharedModule.forRoot()
+    RecommendationModule,
+    BookshelfModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard
+  ],
   bootstrap: [AppComponent],
   exports: []
 })

@@ -1,0 +1,85 @@
+{
+    "users": [
+        { "id": 1, "login": "admin", "password": "admin" }
+    ],
+
+    "books": [
+        {
+            "id": 1,
+            "name": "Женщина в белом",
+            "author": "Уилки Коллинз",
+            "year": "1991",
+            "image": "assets/the_woman_in_white.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Человек, который принял жену за шляпу",
+            "author": "Оливер Сакс",
+            "year": "2015",
+            "image": "assets/a_man_who_mistook_his_wife_for_a_hat.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Тёмные тайны",
+            "author": "Гиллиан Флинн",
+            "year": "2014",
+            "image": "assets/dark_places.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Пир стервятников",
+            "author": "Джордж Р.Р. Мартин",
+            "year": "2014",
+            "image": "assets/a_feast_for_crows.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Незримое, или тайная жизнь Кэт Морли",
+            "author": "Кэтрин Уэбб",
+            "year": "2016",
+            "image": "assets/the_unseen.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Северное сияние",
+            "author": "Филип Пулман",
+            "year": "2006",
+            "image": "assets/northern_lights.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Граф Дракула",
+            "author": "Брэм Стокер",
+            "year": "1993",
+            "image": "assets/dracula.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Большие надежды",
+            "author": "Чарльз Диккенс",
+            "year": "1987",
+            "image": "assets/great_expectations.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Мизери",
+            "author": "Стивен Кинг",
+            "year": "2015",
+            "image": "assets/misery.jpg"
+        },
+        {
+            "id": 10,
+            "name": "Тень ветра",
+            "author": "Карлос Руис Сафон",
+            "year": "2016",
+            "image": "assets/shadow_of_the_ wind.jpg"
+        },
+        {
+            "id": 11,
+            "name": "Крёстный отец",
+            "author": "Марио Пьюзо",
+            "year": "2014",
+            "image": "assets/the_godfather.jpg"
+        }
+    ]
+}

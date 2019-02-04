@@ -4,13 +4,11 @@ import { CommonModule } from '@angular/common';
 import { ModalDialogModule } from './components/modal-dialog/modal-dialog.module';
 import { PaginationModule } from './components/pagination/pagination.module';
 
-import { PaginationPipe } from './pipes/pagination.pipe';
 import { ConfigService } from './services/config.service';
+import { HeaderComponent } from './components/header/header.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
-  declarations: [
-    PaginationPipe
-  ],
   imports: [
     CommonModule,
     ModalDialogModule,
@@ -18,8 +16,11 @@ import { ConfigService } from './services/config.service';
   ],
   exports: [
     ModalDialogModule,
-    PaginationModule,
-    PaginationPipe
+    PaginationModule
+  ],
+  declarations: [
+    HeaderComponent,
+    SidebarComponent
   ]
 })
 export class SharedModule {

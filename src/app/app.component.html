@@ -1,5 +1,3 @@
-<h1 class="header">Библиотека</h1>
-
 <!-- <div class="el-per-page">
   <label>
     Количество записей на страницу:&nbsp;
@@ -7,6 +5,7 @@
   </label>
 </div> -->
 
-<app-sidebar></app-sidebar>
+<router-outlet name="header"></router-outlet>
+<router-outlet name="sidebar"></router-outlet>
 
 <router-outlet></router-outlet>

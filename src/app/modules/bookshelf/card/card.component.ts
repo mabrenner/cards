@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { ModalDialogService } from '../shared/components/modal-dialog/modal-dialog.service';
+import { ModalDialogService } from 'src/app/shared/components/modal-dialog/modal-dialog.service';
 
 @Component({
   selector: 'app-card',

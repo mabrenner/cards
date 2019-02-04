@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { PaginationService, PaginationInstance } from '../components/pagination/pagination.service';
+import { PaginationService, PaginationInstance } from './pagination.service';
 
 const LARGE_NUMBER = Number.MAX_SAFE_INTEGER;
 
